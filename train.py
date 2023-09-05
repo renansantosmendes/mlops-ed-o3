@@ -34,8 +34,6 @@ mlflow.set_tracking_uri('https://dagshub.com/renansantosmendes/'
 mlflow.sklearn.autolog()
 
 """# **Modelos Ensemble**"""
-gradient_clf = GradientBoostingClassifier(max_depth=10,
-                                          n_estimators=150,
-                                          learning_rate=0.01)
+gradient_clf = GradientBoostingClassifier(max_depth=10, n_estimators=150, learning_rate=0.01)
 with mlflow.start_run(run_name='gradiente_bosting') as run:
     gradient_clf.fit(X_train, y_train)
